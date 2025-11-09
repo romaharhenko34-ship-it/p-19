@@ -157,7 +157,129 @@ p {
   form {
     width: 90%;
   }
+}.clock {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: #fff;
+    border: 8px solid #333;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.2), inset 0 0 20px rgba(0,0,0,0.1);
+    padding: 25px;
+    box-sizing: border-box;
+    backdrop-filter: blur(5px);
+    background: rgba(255, 255, 255, 0.95);
 }
+
+.clock .marker {
+    --rotation: 0;
+    --number: "12";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transform: rotate(var(--rotation));
+}
+
+.clock .marker::before {
+    content: '';
+    position: absolute;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 3px;
+    height: 15px;
+    background-color: #333;
+}
+
+.clock .marker::after {
+    content: var(--number);
+    position: absolute;
+    top: 35px;
+    left: 50%;
+    transform: translateX(-50%) rotate(calc(var(--rotation) * -1));
+    color: #333;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.clock .marker:nth-child(1) { --rotation: 30deg; --number: "1"; }
+.clock .marker:nth-child(2) { --rotation: 60deg; --number: "2"; }
+.clock .marker:nth-child(3) { --rotation: 90deg; --number: "3"; }
+.clock .marker:nth-child(4) { --rotation: 120deg; --number: "4"; }
+.clock .marker:nth-child(5) { --rotation: 150deg; --number: "5"; }
+.clock .marker:nth-child(6) { --rotation: 180deg; --number: "6"; }
+.clock .marker:nth-child(7) { --rotation: 210deg; --number: "7"; }
+.clock .marker:nth-child(8) { --rotation: 240deg; --number: "8"; }
+.clock .marker:nth-child(9) { --rotation: 270deg; --number: "9"; }
+.clock .marker:nth-child(10) { --rotation: 300deg; --number: "10"; }
+.clock .marker:nth-child(11) { --rotation: 330deg; --number: "11"; }
+.clock .marker:nth-child(12) { --rotation: 0deg; --number: "12"; }
+
+.clock ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.clock li {
+    position: absolute;
+    transform-origin: 50% 100%;
+    left: 50%;
+    bottom: 50%;
+}
+
+.second-hand {
+    width: 2px;
+    height: 48%;
+    background: #f00;
+    animation: rotate 60s infinite steps(60); 
+    transform-origin: 50% 100%;
+    z-index: 3;
+}
+
+.minute-hand {
+    width: 4px;
+    height: 45%;
+    background: #333;
+    animation: rotate 3600s infinite linear;
+    transform-origin: 50% 100%;
+    z-index: 2;
+}
+
+.hour-hand {
+    width: 6px;
+    height: 35%;
+    background: #333;
+    animation: rotate 43200s infinite linear;
+    transform-origin: 50% 100%;
+    z-index: 1;
+}
+
+.clock::before {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background: #333;
+    border-radius: 50%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    box-shadow: 0 0 5px rgba(0,0,0,0.3);
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
 
 
 
