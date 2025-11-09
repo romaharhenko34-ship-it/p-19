@@ -1,0 +1,135 @@
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0; padding: 0;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #222;
+  color: white;
+  padding: 10px 20px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0; padding: 0;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+.hamburger {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.movies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+  justify-content: center;
+}
+
+.movie {
+  width: 200px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.movie img {
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+form {
+  max-width: 300px;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  position: relative;
+  max-width: 400px;
+}
+
+.close {
+  position: absolute;
+  right: 10px; top: 10px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+@media (min-width: 1920px) {
+  body {
+    font-size: 18px;
+  }
+  .movies {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 1024px) {
+  body {
+    font-size: 16px;
+  }
+  .movies {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+  nav ul {
+    display: none;
+  }
+  nav ul.active {
+    display: flex;
+    flex-direction: column;
+    background-color: #222;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    width: 150px;
+  }
+  .hamburger {
+    display: block;
+  }
+}
+@media (max-width: 320px) {
+  body {
+    font-size: 12px;
+  }
+  .movie {
+    width: 140px;
+  }
+  form {
+    width: 90%;
+  }
+}
+
+

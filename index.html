@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Сайт про фильмы</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">FilmSite</div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Главная</a></li>
+        <li><a href="about.html">О сайте</a></li>
+      </ul>
+      <div class="hamburger" id="hamburger">
+        &#9776;
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="movies">
+      <article class="movie" data-title="Фильм 1" data-desc="Описание фильма 
+        негра который сидел за стариком">
+        <img src="film 1.jpg" alt="Фильм 1" />
+        <h3>Фильм 1</h3>
+      </article>
+      <article class="movie" data-title="Фильм 2" data-desc="Описание фильма 2">
+        <img src="film 2.jpg" alt="Фильм 2" />
+        <h3>Фильм 2</h3>
+      <articlev class="movie" data-title="Фильм 3" data-desc="Описание фильма 3">
+        <img src="proekt 3.jpg" alt="Фильм 3" data-desc="film" />
+        <h3>Фильм 3</h3>
+      </article>
+    
+    </section>
+
+    <form id="contactForm">
+      <h2>Обратная связь</h2>
+      <label for="email">Email:</label>
+      <input type="email" id="email" required />
+      <label for="message">Сообщение:</label>
+      <textarea id="message" required></textarea>
+      <button type="submit">Отправить</button>
+    </form>
+  </main>
+
+  <div class="modal" id="modal">
+    <div class="modal-content">
+      <span class="close" id="modalClose">&times;</span>
+      <h2 id="modalTitle"></h2>
+      <p id="modalDesc"></p>
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
