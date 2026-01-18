@@ -73,10 +73,6 @@ form {
   border-radius: 8px;
   position: relative;
   max-width: 400px;
-  .75% {
-  font-size: 300%;
-  margin-left: 25%;
-  width: 150%;
 }
 p {
   animation-duration: 3s;
@@ -93,14 +89,8 @@ p {
     margin-left: 0%;
     width: 100%;
   }
+}
 
-  75% {
-    font-size: 300%;
-    margin-left: 25%;
-    width: 150%;
-  }
-}
-}
 
 .close {
   position: absolute;
